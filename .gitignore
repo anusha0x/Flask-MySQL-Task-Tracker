@@ -1,0 +1,10 @@
+# Python Environment & Cache
+venv/
+__pycache__/
+*.pyc
+
+# IDE files (VS Code)
+.vscode/
+
+# Database configuration (for security)
+db_config.py

@@ -1,0 +1,192 @@
+body {
+    font-family: 'Montserrat', sans-serif;
+    background-color: #f4f7f6;
+    color: #333;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    max-width: 900px;
+    margin: 40px auto;
+    padding: 20px;
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+    color: #007bff;
+    text-align: center;
+    border-bottom: 2px solid #e0e0e0;
+    padding-bottom: 10px;
+    margin-bottom: 30px;
+}
+
+h2 {
+    color: #444;
+    font-size: 1.5em;
+    margin-top: 0;
+}
+
+/* --- Forms & Inputs --- */
+.add-task form {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+}
+
+#task-form input[type="text"], 
+#task-form textarea, 
+#task-form input[type="date"] {
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    font-size: 1em;
+}
+
+#task-form textarea {
+    grid-column: 1 / -1;
+    resize: vertical;
+    min-height: 80px;
+}
+
+button, #toggle-sort-order {
+    padding: 12px 20px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: background-color 0.2s;
+}
+
+#submit-btn {
+    background-color: #007bff;
+    color: white;
+    grid-column: 2 / 3;
+}
+
+#submit-btn:hover {
+    background-color: #0056b3;
+}
+
+/* --- Controls (Filter/Sort) --- */
+.controls {
+    margin-bottom: 20px;
+}
+.filter-sort-group {
+    display: flex;
+    gap: 15px;
+    align-items: center;
+}
+
+.filter-sort-group select, .filter-sort-group label {
+    font-size: 1em;
+}
+
+#toggle-sort-order {
+    background-color: #6c757d;
+    color: white;
+}
+
+#toggle-sort-order:hover {
+    background-color: #5a6268;
+}
+
+/* --- Task List Items --- */
+.task-item {
+    background: #ffffff;
+    padding: 15px;
+    margin-bottom: 10px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-left: 5px solid #ffc107; /* Pending color */
+    transition: all 0.2s;
+}
+
+.task-item.completed {
+    border-left: 5px solid #28a745; /* Completed color */
+    opacity: 0.8;
+}
+
+.task-info {
+    flex-grow: 1;
+}
+
+.task-info h3 {
+    margin: 0 0 5px 0;
+    font-size: 1.2em;
+}
+
+.task-info p {
+    margin: 0;
+    color: #666;
+    font-size: 0.9em;
+}
+
+.task-actions button {
+    margin-left: 8px;
+    padding: 8px 12px;
+    font-size: 0.9em;
+}
+
+.btn-complete { background-color: #28a745; color: white; }
+.btn-complete:hover { background-color: #1e7e34; }
+.btn-edit { background-color: #ffc107; color: #333; }
+.btn-edit:hover { background-color: #e0a800; }
+.btn-delete { background-color: #dc3545; color: white; }
+.btn-delete:hover { background-color: #c82333; }
+
+/* --- Modal Styles --- */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed;
+    z-index: 100;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+.modal-content {
+    background-color: #fefefe;
+    margin: 15% auto; /* 15% from the top and centered */
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%; /* Could be more or less, depending on screen size */
+    max-width: 500px;
+    border-radius: 10px;
+}
+
+.close-btn {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close-btn:hover,
+.close-btn:focus {
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+#edit-form input, #edit-form textarea, #edit-form button {
+    display: block;
+    width: 100%;
+    margin-bottom: 10px;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ddd;
+}
+
+#edit-form button {
+    background-color: #007bff;
+    color: white;
+}
